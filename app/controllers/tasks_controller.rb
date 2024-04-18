@@ -6,6 +6,8 @@ class TasksController < ApplicationController
   # GET /tasks
   def index
     @tasks = @user.tasks.all
+    @tasks = @tasks.search_by_title(params[:search]) if params[:search].present?
+    @tasks = @tasks.sorted_by_due_date(params[:sort_direction]) if params[:sort_direction].present?
 
     render json: @tasks
   end

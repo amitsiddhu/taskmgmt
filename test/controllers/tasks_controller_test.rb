@@ -14,6 +14,18 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get index and sort by due date" do
+    get tasks_url, params: { sort_direction: 'asc' }, headers: { 'Authorization' => "Bearer #{@token}" }
+    assert_response :success
+    # Further assertions can be made based on the order of tasks in the response body.
+  end
+
+  test "should get index and search by title" do
+    get tasks_url, params: { search: 'Specific Task' }, headers: { 'Authorization' => "Bearer #{@token}" }
+    assert_response :success
+    # Assertions can be made based on the content of the response body.
+  end
+
   test "should create task" do
     assert_difference("Task.count") do
       post tasks_url, params: { task: { description: @task.description, status: @task.status, title: @task.title, due_date: @due_date } }, as: :json, headers: { 'Authorization' => "Bearer #{@token}" }

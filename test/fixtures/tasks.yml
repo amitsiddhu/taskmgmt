@@ -4,10 +4,12 @@ one:
   title: 'Task title one'
   description: 'Task description one'
   status: 'All'
+  due_date: <%= 3.days.from_now %>
   user: one
 
 two:
   title: 'Task title two'
   description: 'Task description two'
   status: 'Done'
+  due_date: <%= 5.days.from_now %>
   user: two
