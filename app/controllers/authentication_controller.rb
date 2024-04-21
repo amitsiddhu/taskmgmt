@@ -11,6 +11,11 @@ class AuthenticationController < ApplicationController
     end
   end
 
+  def logout
+    # Simulate logout by instructing the client to delete the token
+    render json: { message: 'Logged out successfully' }, status: :ok
+  end
+
   private
 
   def jwt_encode(payload)
