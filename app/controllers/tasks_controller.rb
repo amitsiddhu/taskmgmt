@@ -14,13 +14,14 @@ class TasksController < ApplicationController
 
   # GET /tasks/1
   def show
+    authorize @task
     render json: @task
   end
 
   # POST /tasks
   def create
     @task = @user.tasks.new(task_params)
-
+    authorize @task
     if @task.save
       render json: @task, status: :created, location: @task
     else
@@ -30,6 +31,7 @@ class TasksController < ApplicationController
 
   # PATCH/PUT /tasks/1
   def update
+    authorize @task
     if @task.update(task_params)
       render json: @task
     else
@@ -39,6 +41,7 @@ class TasksController < ApplicationController
 
   # DELETE /tasks/1
   def destroy
+    authorize @task
     @task.destroy!
   end
 

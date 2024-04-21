@@ -15,8 +15,11 @@ class ApplicationController < ActionController::API
   end
 
   def jwt_decode(token)
-    decoded = JWT.decode(token, Rails.application.credentials.secret_key_base).first
+    decoded = JWT.decode(token, Rails.application.credentials.secret_key_base, false).first
     HashWithIndifferentAccess.new decoded
   end
 
+  def current_user
+    @current_user
+  end
 end

@@ -1,10 +1,10 @@
 class UserPolicy < ApplicationPolicy
-  def index
-    user.id.present?
+  def index?
+    user.present?
   end
 
   def show?
-    user.id.present?
+    user.id == record.id
   end
 
   def update?
