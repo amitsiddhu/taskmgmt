@@ -2,8 +2,8 @@ class AuthenticationController < ApplicationController
   skip_before_action :authenticate_request!
 
   def authenticate
-    user = User.find_by(email: params[:email])
-    if user&.authenticate(params[:password])
+    user = User.find_by(email: user_params[:email])
+    if user&.authenticate(user_params[:password])
       token = jwt_encode(user_id: user.id)
       render json: { token: token }, status: :ok
     else
@@ -20,5 +20,9 @@ class AuthenticationController < ApplicationController
 
   def jwt_encode(payload)
     JWT.encode(payload, Rails.application.secrets.secret_key_base)
+  end
+
+  def user_params
+    params.require(:user).permit(:email, :password)
   end
 end

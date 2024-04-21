@@ -8,7 +8,7 @@ class AuthenticationControllerTest < ActionDispatch::IntegrationTest
 
   # User login
   test "should authenticate user" do
-    post authenticate_url, params: { email: @user.email, password: 'password' }
+    post authenticate_url, params: { user: { email: @user.email, password: 'password' } }
     assert_response :ok
   end
   
