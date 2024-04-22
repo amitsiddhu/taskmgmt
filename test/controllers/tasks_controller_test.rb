@@ -20,8 +20,8 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
     # Further assertions can be made based on the order of tasks in the response body.
   end
 
-  test "should get index and search by title" do
-    get tasks_url, params: { search: 'Specific Task' }, headers: { 'Authorization' => "Bearer #{@token}" }
+  test "should get index and search by status" do
+    get tasks_url, params: { search: 'To Do' }, headers: { 'Authorization' => "Bearer #{@token}" }
     assert_response :success
     # Assertions can be made based on the content of the response body.
   end

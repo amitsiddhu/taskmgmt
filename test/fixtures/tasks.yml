@@ -3,7 +3,7 @@
 one:
   title: 'Task title one'
   description: 'Task description one'
-  status: 'All'
+  status: 'To Do'
   due_date: <%= 3.days.from_now %>
   user: one
 

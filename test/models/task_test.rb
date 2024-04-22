@@ -5,8 +5,8 @@ class TaskTest < ActiveSupport::TestCase
     task = Task.new(due_date: Time.current - 1.day)
     assert_not task.save, "Saved the task with a past due date"
   end
-  test "search_by_title" do
-    assert_equal 2, Task.search_by_title("Task").count
+  test "search_by_status" do
+    assert_equal 1, Task.search_by_status("To Do").count
     # Assumes you have at least two tasks with "Task" in their titles in your fixtures or setup.
   end
   test "sorted_by_due_date ascending" do
