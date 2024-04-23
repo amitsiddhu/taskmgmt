@@ -13,6 +13,10 @@ class UsersController < ApplicationController
     render json: @user
   end
 
+  def current
+    render json: @current_user
+  end
+
   # PATCH/PUT /users/1
   def update
     authorize @user

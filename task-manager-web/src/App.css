@@ -1,0 +1,83 @@
+body {
+  background-color: #f8f9fa;
+  color: #333;
+  margin-top: 20px;
+}
+
+/* Navbar styling */
+.navbar {
+  margin-bottom: 20px;
+}
+
+/* Form field styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Input and select box styling */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select.form-control {
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+
+/* Button styling */
+.btn {
+  border-radius: 5px;
+}
+
+/* Task list table styling */
+.table {
+  margin-top: 20px;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+/* Actions column styling */
+.table th:last-child,
+.table td:last-child {
+  text-align: right;
+}
+
+/* Button spacing */
+.btn-group .btn {
+  margin-left: 5px; /* Add a margin between buttons */
+}
+
+/* Status labels styling */
+.status-label {
+  display: inline-block;
+  padding: .25em .4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25rem;
+}
+
+.status-ToDo {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.status-InProgress {
+  background-color: #17a2b8;
+  color: #fff;
+}
+
+.status-Done {
+  background-color: #28a745;
+  color: #fff;
+}
+
+/* Utility classes */
+.text-danger {
+  color: #dc3545 !important;
+}
